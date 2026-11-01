@@ -11,21 +11,27 @@ import { Footer } from "@/components/invitation/Footer";
 import { invitation } from "@/content/invitation";
 
 const title = `${invitation.couple.fullNameBride} & ${invitation.couple.fullNameGroom} — Wedding Invitation`;
-const description = `Join us in celebrating the wedding of ${invitation.couple.fullNameBride} and ${invitation.couple.fullNameGroom} on ${invitation.dateLabel} at ${invitation.venue.name}, Pulpally.`;
+const description = `Join us in celebrating the wedding of ${invitation.couple.fullNameBride} and ${invitation.couple.fullNameGroom} on ${invitation.dateLabel} (11:00 AM – 12:30 PM) at ${invitation.venue.name}, Pulpally.`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title },
       { name: "description", content: description },
+      { property: "og:site_name", content: "Abhaya & Vishakh Wedding Invitation" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:image", content: "/photos/couple-traditional.jpg" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:secure_url", content: "/og-image.png" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: `Wedding Invitation — ${invitation.couple.fullNameBride} & ${invitation.couple.fullNameGroom}` },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: "/photos/couple-traditional.jpg" },
+      { name: "twitter:image", content: "/og-image.png" },
     ],
   }),
   component: Index,
