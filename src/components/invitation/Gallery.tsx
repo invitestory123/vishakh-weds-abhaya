@@ -2,17 +2,41 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { X } from "lucide-react";
 import coupleTraditional from "@/assets/photos/couple-traditional.jpg";
+import coupleWalking from "@/assets/photos/couple-walking.jpg";
+import coupleBalcony from "@/assets/photos/couple-balcony.jpg";
 import couplePoolside from "@/assets/photos/couple-poolside.jpg";
-const dancing = "https://media.invitestory.in/ever-after-bloom/src/assets/scene-dancing.jpg";
-const hands = "https://media.invitestory.in/ever-after-bloom/src/assets/scene-hands.jpg";
 const couple = "https://media.invitestory.in/ever-after-bloom/src/assets/couple-lanterns.png";
 import { Ornament, Reveal, SectionTitle } from "./Reveal";
 
 const plates = [
-  { src: coupleTraditional, alt: "Abhaya and Vishakh in festive attire", span: "sm:row-span-2", ratio: "aspect-[4/5]" },
-  { src: dancing, alt: "Celebration and dance under warm glowing lights", span: "", ratio: "aspect-square" },
-  { src: hands, alt: "Two joined hands symbolizing eternal togetherness", span: "", ratio: "aspect-square" },
-  { src: couplePoolside, alt: "Abhaya and Vishakh sharing a serene poolside moment", span: "sm:col-span-2", ratio: "aspect-[16/10]" },
+  {
+    src: coupleTraditional,
+    alt: "Abhaya and Vishakh in festive attire",
+    span: "sm:row-span-2",
+    ratio: "aspect-[4/5]",
+    position: "object-center",
+  },
+  {
+    src: coupleWalking,
+    alt: "Abhaya and Vishakh walking hand in hand",
+    span: "",
+    ratio: "aspect-square",
+    position: "object-[center_35%]",
+  },
+  {
+    src: coupleBalcony,
+    alt: "Abhaya and Vishakh sharing a serene moment on the balcony",
+    span: "",
+    ratio: "aspect-square",
+    position: "object-[center_55%]",
+  },
+  {
+    src: couplePoolside,
+    alt: "Abhaya and Vishakh sharing a serene poolside moment",
+    span: "sm:col-span-2",
+    ratio: "aspect-[16/10]",
+    position: "object-center",
+  },
 ];
 
 export function Gallery() {
@@ -53,7 +77,7 @@ export function Gallery() {
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className={`${p.ratio} h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-[1.05]`}
+                    className={`${p.ratio} ${p.position} h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-[1.05]`}
                   />
                   <span
                     aria-hidden
