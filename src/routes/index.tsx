@@ -8,6 +8,7 @@ import { Details } from "@/components/invitation/Details";
 import { Timeline } from "@/components/invitation/Timeline";
 import { Gallery } from "@/components/invitation/Gallery";
 import { Footer } from "@/components/invitation/Footer";
+import { MusicPlayer } from "@/components/invitation/MusicPlayer";
 import { invitation } from "@/content/invitation";
 
 const title = `${invitation.couple.fullNameBride} & ${invitation.couple.fullNameGroom} — Wedding Invitation`;
@@ -48,7 +49,7 @@ function Index() {
       <Timeline />
       <Gallery />
       <Footer />
+      <MusicPlayer />
     </main>
   );
 }
-

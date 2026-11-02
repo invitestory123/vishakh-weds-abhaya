@@ -31,15 +31,16 @@ export function IntroGate() {
   const open = () => {
     if (stage !== "seal") return;
     setStage("film");
+    window.dispatchEvent(new CustomEvent("play-wedding-music"));
     const el = videoRef.current;
     if (!el) return;
     el.currentTime = 0;
     void el.play();
   };
 
-
   const finish = () => {
     if (fading) return;
+    window.dispatchEvent(new CustomEvent("play-wedding-music"));
     setFading(true);
     window.setTimeout(() => setStage("done"), 1300);
   };
@@ -115,4 +116,3 @@ export function IntroGate() {
     </motion.div>
   );
 }
-
